@@ -1,18 +1,15 @@
-import { RoleRepository } from '@roles/repositories/RolesRepository'
 import { createRolesController } from '@roles/useCases/createRole'
+import { listRolesController } from '@roles/useCases/listRoles'
 import { Router } from 'express'
 
 const rolesRouter = Router()
-const rolesRepository = new RoleRepository()
 
 rolesRouter.post('/', (req, res) => {
   return createRolesController.handle(req, res)
 })
 
 rolesRouter.get('/', (req, res) => {
-  const roles = rolesRepository.findAll()
-
-  return res.json(roles)
+  return listRolesController.handle(req, res)
 })
 
 export { rolesRouter }
