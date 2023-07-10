@@ -60,9 +60,54 @@
         "tags": ["Role"],
         "summary": "List all roles",
         "description": "Returns all roles paginated",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Number of the page",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "example": "page=1"
+            },
+            "style": "label"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Number of registers per page",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "example": "limit=15"
+            },
+            "style": "label"
+          }
+        ],
         "responses": {
           "200": {
-            "description": "Success."
+            "description": "Success.",
+            "content": {
+              "application/json": {
+                "example": {
+                  "per_page": 15,
+                  "total": 2,
+                  "current_page": 1,
+                  "data": [
+                    {
+                      "id": "f14afabc-9710-4707-9ee1-6a5a7d63a87f",
+                      "name": "Users",
+                      "created_at": "2023-07-05T23:17:59.000Z"
+                    },
+                    {
+                      "id": "70c76133-8962-4eb6-bf39-304afd39507c",
+                      "name": "Admin",
+                      "created_at": "2023-07-05T23:18:27.000Z"
+                    }
+                  ]
+                }
+              }
+            }
           }
         }
       }
