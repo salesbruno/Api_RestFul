@@ -9,7 +9,7 @@ type DeleteRoleParams = {
 @injectable()
 export class DeleteRoleUseCase {
   constructor(
-    @inject('RoleRepository')
+    @inject('RolesRepository')
     private rolesRepository: IRolesRepository,
   ) {}
 

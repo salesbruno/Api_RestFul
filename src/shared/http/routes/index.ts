@@ -8,5 +8,4 @@ routes.get('/', (req, res) => {
 })
 
 routes.use('/roles', rolesRouter)
-
 export { routes }

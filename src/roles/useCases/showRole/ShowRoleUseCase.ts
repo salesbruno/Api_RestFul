@@ -10,7 +10,7 @@ type ShowRoleParams = {
 @injectable()
 export class ShowRoleUseCase {
   constructor(
-    @inject('RoleRepository')
+    @inject('RolesRepository')
     private rolesRepository: IRolesRepository,
   ) {}
 

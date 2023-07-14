@@ -11,7 +11,7 @@ type UpdateRoleDTO = {
 @injectable()
 export class UpdateRoleUseCase {
   constructor(
-    @inject('RoleRepository')
+    @inject('RolesRepository')
     private rolesRepository: IRolesRepository,
   ) {}
 
