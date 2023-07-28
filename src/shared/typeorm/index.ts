@@ -3,11 +3,12 @@ import { CreateRolesTable1688398469454 } from './migrations/1688398469454-Create
 import { Role } from '@roles/entities/Role'
 import { CreateUsersTable1689893194624 } from './migrations/1689893194624-CreateUsersTable'
 import { AddRoleIdToUsersTable1689895295839 } from './migrations/1689895295839-AddRoleIdToUsersTable'
+import { User } from '@users/entities/User'
 
 export const dataSource = new DataSource({
   type: 'sqlite',
   database: './db.sqlite',
-  entities: [Role],
+  entities: [Role, User],
   migrations: [
     CreateRolesTable1688398469454,
     CreateUsersTable1689893194624,
