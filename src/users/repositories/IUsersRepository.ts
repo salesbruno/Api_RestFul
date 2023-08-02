@@ -1,5 +1,5 @@
 import { Role } from '@roles/entities/Role'
-import { User } from '../User'
+import { User } from '../entities/User'
 
 export type CreateUserDTO = {
   name: string

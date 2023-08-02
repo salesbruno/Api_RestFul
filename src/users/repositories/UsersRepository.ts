@@ -1,5 +1,5 @@
 import { Repository } from 'typeorm'
-import { User } from '../User'
+import { User } from '../entities/User'
 import {
   CreateUserDTO,
   IUsersRepository,
