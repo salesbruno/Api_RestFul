@@ -12,11 +12,11 @@ type CreateUserDTO = {
   isAdmin: boolean
   roleId: string
 }
+
 @injectable()
 export class CreateUserUseCase {
   constructor(
-    @inject('UsersRepository')
-    private usersRepository: IUsersRepository,
+    @inject('UsersRepository') private usersRepository: IUsersRepository,
     @inject('RolesRepository') private rolesRepository: IRolesRepository,
   ) {}
 
