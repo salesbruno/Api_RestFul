@@ -2,7 +2,7 @@ import { Router } from 'express'
 import { celebrate, Joi, Segments } from 'celebrate'
 import { container } from 'tsyringe'
 import { CreateUserController } from '@users/useCases/createUser/CreateUserController'
-import { ListUsersController } from '@roles/useCases/listUsers/ListUsersController'
+import { ListUsersController } from '@users/useCases/listUsers/ListUsersController'
 
 const usersRouter = Router()
 const createUserController = container.resolve(CreateUserController)
