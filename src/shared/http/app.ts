@@ -1,4 +1,4 @@
-import express, { NextFunction } from 'express'
+import express, { NextFunction, Request, Response } from 'express'
 import 'express-async-errors'
 import swaggerUI from 'swagger-ui-express'
 import cors from 'cors'

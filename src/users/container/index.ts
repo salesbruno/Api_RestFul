@@ -1,7 +1,7 @@
 import { IUsersRepository } from '@users/repositories/IUsersRepository'
 import { UsersRepository } from '@users/repositories/UsersRepository'
 import { CreateLoginController } from '@users/useCases/createLogin/CreateLoginController'
-import { CreateUserController } from '@users/useCases/createUser/CreateUserController'
+import { CreateUserController } from '@users/useCases/showProfile/ShowProfileController'
 import { ListUsersController } from '@users/useCases/listUsers/ListUsersController'
 import { UpdateAvatarController } from '@users/useCases/updateAvatar/UpdateAvatarController'
 import { container } from 'tsyringe'
