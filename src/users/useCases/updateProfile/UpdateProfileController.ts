@@ -1,18 +1,20 @@
+import { instanceToInstance } from 'class-transformer'
 import { Request, Response } from 'express'
 import { container } from 'tsyringe'
-import { CreateUserUseCase } from './UpdateProfileUseCase'
+import { UpdateProfileUseCase } from './UpdateProfileUseCase'
 
-export class CreateUserController {
-  async handle(request: Request, response: Response): Promise<Response> {
-    const createUserUseCase = container.resolve(CreateUserUseCase)
-    const { name, email, password, isAdmin, roleId } = request.body
-    const user = await createUserUseCase.execute({
+export class UpdateProfileController {
+  async handle(req: Request, res: Response): Promise<Response> {
+    const updateProfileUseCase = container.resolve(UpdateProfileUseCase)
+    const userId = req.user.id
+    const { name, email, password, old_password } = req.body
+    const user = await updateProfileUseCase.execute({
+      userId,
       name,
       email,
       password,
-      isAdmin,
-      roleId,
+      old_password,
     })
-    return response.status(201).json(user)
+    return res.json(instanceToInstance(user))
   }
 }
